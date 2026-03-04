@@ -1,0 +1,11 @@
+--- 
+- hosts: webservers
+  become: true
+  tasks:
+  - name: copying files from src to dest
+    copy: src=/home/ansible/handler-of-nginx.yml dest=/home/ansible/
+    notify:
+     - restart the httpd service
+  handlers:
+  - name: restart the httpd service
+    service: name=httpd state=restarted

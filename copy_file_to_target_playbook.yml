@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: copying files from /src/home/ansible to target of /opt
+    copy: 
+     src: /home/ansible/install_zip_playbook.yml
+     dest: /opt

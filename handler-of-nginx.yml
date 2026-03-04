@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: Install the nginx service
+    yum: name=nginx state=present
+    notify:
+    - start the nginx service
+  handlers:
+  - name: start the nginx service
+    service: name=nginx state=started

@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: check the current date
+    command: date
+    register: date_output
+  - name: Display the date
+    debug:
+      msg: "Today's Dats is {{ date_output }}"

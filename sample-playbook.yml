@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+   name: john
+  tasks:
+  - name: Create a file undr /opt
+    command: touch /opt/sai.txt
+  - name: list all files under /opt
+    command: ls -lrt /opt
+

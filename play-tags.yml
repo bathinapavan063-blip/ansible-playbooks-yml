@@ -1,0 +1,19 @@
+---
+- hosts: webservers
+  become: true
+  tags:
+  - install_package
+  tasks:
+  - name: Install the package
+    yum: name=git state=present
+  - name: Install the package 
+    yum: name=zip state=present
+- hosts: webservers
+  become: true
+  tags:
+  - upgrade_package
+  tasks:
+  - name: upgrade the package
+    yum: name=git state=latest
+  - name: upgrade the package
+    yum: name=zip state=latest

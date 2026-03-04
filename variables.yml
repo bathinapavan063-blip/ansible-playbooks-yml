@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+   name: pavan
+  tasks:
+  - name: Display the variables value
+    debug:
+      msg={{ name }}
+

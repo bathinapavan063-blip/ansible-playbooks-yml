@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: install zip package
+    yum: name=zip state=present
+    tags:
+     - zip
+  - name: install git package
+    yum: name=git state=present
+    tags: 
+     - git
+  - name: install net-tools package
+    yum: name=net-tools state=present
+    tags: 
+     - net-tools

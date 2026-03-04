@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+    name: sai
+  tasks:
+  - name: Display the variable value
+    debug:
+      msg={{ name }}

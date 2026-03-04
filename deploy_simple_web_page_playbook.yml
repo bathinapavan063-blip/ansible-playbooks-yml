@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: start the httpd service
+    service: name=httpd state=started enabled=yes
+  - name: copy website content
+    copy:
+     content: "<h1>Hello Pavan Devops World</h1>"
+     dest: /var/www/html/index.html

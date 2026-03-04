@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+   name: rajesh
+  tasks:
+  - name: Display the var name
+    debug:
+      msg: "This name is {{ name }}"

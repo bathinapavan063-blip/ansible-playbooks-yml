@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: packages
+    yum: name={{ item.name }} state={{ item.state }}
+    with_items:
+     - { name: git, state: present }
+     - { name: bind-utils, state: absent }
+     - { name: net-tools, state: latest }

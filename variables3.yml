@@ -1,0 +1,13 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+   name: smith
+   port: 8080
+  tasks:
+  - name: Display the user name
+    debug:
+      msg: "user name is {{ name }}"
+  - name: Display the port number
+    debug:
+      msg: "port number is {{ port }}"
