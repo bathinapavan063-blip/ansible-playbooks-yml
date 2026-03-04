@@ -1,2 +1,2 @@
 # ansible-playbooks-yml
-Here to present the all practised/created  playbooks on ansible concept
+Here to present  all the practised/created  playbooks on ansible concept 
